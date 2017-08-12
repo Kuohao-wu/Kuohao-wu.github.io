@@ -554,14 +554,17 @@ style
     --- base
             --- normalize.css     /* 统一浏览器样式 */
             --- reset.css         /* 按需重置浏览器样式 */
-    --- scss
+    --- lib
+            --- _bootstrap.scss     /* 第三方样式库 */
+    --- style
             --- _mixin.scss       /* 混入函数 */
             --- _variable.scss    /* 全局变量 */     
             --- components.scss   /* 基础组件样式 */
             --- layout.scss        /* 页面主样式 */
 ```
+模块化的样式划分，基础文件就以_开头，导入到主样式或者组件样式中动态引用；component.scss这个文件里面放页面的组件样式，把各种UI基本样式抽象起来，放到里面；而layout.scss则负责页面的布局，页面更细致的样式。如果你的项目css样式很多，那么也可以分得更细致。
 
-文件的划分和布局展开讲篇幅太多，更多的讨论请看
+文件的划分和组织的粒度要看具体的项目，展开讲篇幅太多，更多的讨论请看
 [你是如何去组织项目中的 Less/Sass 代码的？](https://www.zhihu.com/question/35708352)
 
 文件划分和组织需要用到本地编译器，我推荐新手使用 koala，一款国人开发的编译器，支持，less/scss等编译

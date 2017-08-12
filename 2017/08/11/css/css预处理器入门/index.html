@@ -284,6 +284,12 @@
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
+                <a href="/tags/promise/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  promise
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
                 <a href="/tags/react/" class="mdui-list-item mdui-ripple" style="display: flex">
                   react
                   <div style="flex-grow: 1;"></div>
@@ -294,12 +300,6 @@
                   hexo
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
-                </a>
-              
-                <a href="/tags/promise/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  promise
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
             </div>
@@ -455,7 +455,7 @@
         
         
           <div class="mdui-card-media">
-            <img src="/img/random/picHD_5.png"/>
+            <img src="/img/random/picHD_18.png"/>
           </div>
         
         <div class="post-content mdui-typo no-margin" id="post-content">
@@ -828,13 +828,16 @@
 <span class="token code keyword">    --- base</span>
 <span class="token code keyword">            --- normalize.css     /* 统一浏览器样式 */</span>
 <span class="token code keyword">            --- reset.css         /* 按需重置浏览器样式 */</span>
-<span class="token code keyword">    --- scss</span>
+<span class="token code keyword">    --- lib</span>
+<span class="token code keyword">            --- _bootstrap.scss     /* 第三方样式库 */</span>
+<span class="token code keyword">    --- style</span>
 <span class="token code keyword">            --- _mixin.scss       /* 混入函数 */</span>
 <span class="token code keyword">            --- _variable.scss    /* 全局变量 */     </span>
 <span class="token code keyword">            --- components.scss   /* 基础组件样式 */</span>
 <span class="token code keyword">            --- layout.scss        /* 页面主样式 */</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>文件的划分和布局展开讲篇幅太多，更多的讨论请看<br><a href="https://www.zhihu.com/question/35708352" target="_blank" rel="external">你是如何去组织项目中的 Less/Sass 代码的？</a></p>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>模块化的样式划分，基础文件就以_开头，导入到主样式或者组件样式中动态引用；component.scss这个文件里面放页面的组件样式，把各种UI基本样式抽象起来，放到里面；而layout.scss则负责页面的布局，页面更细致的样式。如果你的项目css样式很多，那么也可以分得更细致。</p>
+<p>文件的划分和组织的粒度要看具体的项目，展开讲篇幅太多，更多的讨论请看<br><a href="https://www.zhihu.com/question/35708352" target="_blank" rel="external">你是如何去组织项目中的 Less/Sass 代码的？</a></p>
 <p>文件划分和组织需要用到本地编译器，我推荐新手使用 koala，一款国人开发的编译器，支持，less/scss等编译<br><a href="http://koala-app.com/index-zh.html" target="_blank" rel="external">koala官网</a><br><a href="http://blog.csdn.net/u011250873/article/details/45917519" target="_blank" rel="external">koala使用教程</a></p>
 <h3 id="mixin与extend之争"><a href="#mixin与extend之争" class="headerlink" title="mixin与extend之争"></a>mixin与extend之争</h3><p>mixin和extend好像都差不多，到底是用mixin还是extend呢？ </p>
 <p><strong>extend</strong></p>
@@ -1099,7 +1102,7 @@ gitment.render('container')
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1502501571000
+    var postLastModifiedDate = 1502502658000
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
