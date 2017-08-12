@@ -212,16 +212,16 @@
             </div>
             <div class="mdui-collapse-item-body mdui-list">
               
-                <a href="/categories/git/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  git
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
-                </a>
-              
                 <a href="/categories/css/" class="mdui-list-item mdui-ripple" style="display: flex">
                   css
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/categories/git/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  git
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
                 </a>
               
                 <a href="/categories/javascript/" class="mdui-list-item mdui-ripple" style="display: flex">
@@ -254,16 +254,16 @@
             </div>
             <div class="mdui-collapse-item-body mdui-list">
               
-                <a href="/tags/git/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  git
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
-                </a>
-              
                 <a href="/tags/css预处理/" class="mdui-list-item mdui-ripple" style="display: flex">
                   css预处理
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
+                </a>
+              
+                <a href="/tags/git/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  git
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
                 </a>
               
                 <a href="/tags/this/" class="mdui-list-item mdui-ripple" style="display: flex">
@@ -284,12 +284,6 @@
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
-                <a href="/tags/promise/" class="mdui-list-item mdui-ripple" style="display: flex">
-                  promise
-                  <div style="flex-grow: 1;"></div>
-                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
-                </a>
-              
                 <a href="/tags/react/" class="mdui-list-item mdui-ripple" style="display: flex">
                   react
                   <div style="flex-grow: 1;"></div>
@@ -300,6 +294,12 @@
                   hexo
                   <div style="flex-grow: 1;"></div>
                   <span class="badge new mdui-color-theme-accent" data-badge-caption="">3</span>
+                </a>
+              
+                <a href="/tags/promise/" class="mdui-list-item mdui-ripple" style="display: flex">
+                  promise
+                  <div style="flex-grow: 1;"></div>
+                  <span class="badge new mdui-color-theme-accent" data-badge-caption="">1</span>
                 </a>
               
             </div>
@@ -455,7 +455,7 @@
         
         
           <div class="mdui-card-media">
-            <img src="/img/random/picHD_39.png"/>
+            <img src="/img/random/picHD_5.png"/>
           </div>
         
         <div class="post-content mdui-typo no-margin" id="post-content">
@@ -613,7 +613,7 @@
     <span class="token selector"><span class="token class">.verify</span></span><span class="token punctuation">{</span>
         <span class="token comment" spellcheck="true">/*共性*/</span>
         <span class="token atrule"><span class="token rule">@include</span> btn<span class="token punctuation">;</span></span>
-        **个性**
+        <span class="token comment" spellcheck="true">/*个性*/</span>
         <span class="token property">background</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -666,7 +666,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>scss的@mixin定义的混入是不会编译输出到css中的，而less定义的mixin，需要在类名后面加一个()才不会编译输出，否则会被当做一个普通的css规则。</p>
 <h4 id="带参数的混入"><a href="#带参数的混入" class="headerlink" title="带参数的混入"></a>带参数的混入</h4><p>其实混入就相当于一个函数，能够传参，能够调用。</p>
-<pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token atrule"><span class="token rule">@mixin</span> .<span class="token function">btn</span><span class="token punctuation">(</span>$bg,$width,$bdrs<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">btn</span><span class="token punctuation">(</span>$bg,$width,$bdrs<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
         <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
         <span class="token property">border-radius</span><span class="token punctuation">:</span> $bdrs<span class="token punctuation">;</span>
         <span class="token property">background</span><span class="token punctuation">:</span> $bg<span class="token punctuation">;</span>
@@ -675,7 +675,7 @@
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>混入传参还可以设置默认值</p>
-<pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token atrule"><span class="token rule">@mixin</span> .<span class="token function">btn</span><span class="token punctuation">(</span>$<span class="token property">bg</span><span class="token punctuation">:</span>#f60,$<span class="token property">width</span><span class="token punctuation">:</span>80px,$bdrs<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token atrule"><span class="token rule">@mixin</span> <span class="token function">btn</span><span class="token punctuation">(</span>$<span class="token property">bg</span><span class="token punctuation">:</span>#f60,$<span class="token property">width</span><span class="token punctuation">:</span>80px,$bdrs<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
         <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
         <span class="token property">border-radius</span><span class="token punctuation">:</span> $bdrs<span class="token punctuation">;</span>
         <span class="token property">background</span><span class="token punctuation">:</span> $bg<span class="token punctuation">;</span>
@@ -685,7 +685,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>调用的时候，就像普通的函数一样使用</p>
 <pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token selector"><span class="token class">.warn</span> </span><span class="token punctuation">{</span>
-        @include <span class="token number">.</span><span class="token function">btn</span><span class="token punctuation">(</span><span class="token hexcode">#f60</span>,<span class="token number">80</span>px,<span class="token number">2</span>px<span class="token punctuation">)</span>
+        @include <span class="token function">btn</span><span class="token punctuation">(</span><span class="token hexcode">#f60</span>,<span class="token number">80</span>px,<span class="token number">2</span>px<span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>设置参数less和scss的区别就是把变量中的$换成@，传参的格式是一样的，和less不同，如果mixin中没有参数，scss的mixin是可以把()省略的。</p>
@@ -757,6 +757,10 @@
        &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token number">.</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
        <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
+    <span class="token comment" spellcheck="true">/*或者可以这样*/</span>
+    <span class="token selector"><span class="token class">.b</span><span class="token pseudo-class">:extend(.a)</span></span><span class="token punctuation">{</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>    
 
     <span class="token comment" spellcheck="true">/* scss extend */</span> 
     <span class="token selector"><span class="token class">.a</span> </span><span class="token punctuation">{</span>
@@ -766,7 +770,8 @@
         <span class="token atrule"><span class="token rule">@extend</span> .a<span class="token punctuation">;</span></span>
         <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">16</span>px<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>两者的区别就是写法的略有不同，less比较麻烦一点。</p>
 <h3 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h3><h4 id="插值使用场景"><a href="#插值使用场景" class="headerlink" title="插值使用场景"></a>插值使用场景</h4><p>插值是什么？ 先来看一段代码</p>
 <pre class="line-numbers language-css" data-lang="css"><code class="language-css">    <span class="token selector"><span class="token class">.trangle</span></span><span class="token punctuation">{</span>
         <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -786,8 +791,8 @@
     <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/* 灵活引用 */</span>
-    <span class="token selector">. topTrangle</span><span class="token punctuation">{</span>
-        @include <span class="token function">trangle</span><span class="token punctuation">(</span>buttom,<span class="token hexcode">#f60</span><span class="token punctuation">)</span>
+    <span class="token selector"><span class="token class">.topTrangle</span></span><span class="token punctuation">{</span>
+        @include <span class="token function">trangle</span><span class="token punctuation">(</span>bottom,<span class="token hexcode">#f60</span><span class="token punctuation">)</span>
     <span class="token punctuation">}</span>
     <span class="token selector"><span class="token class">.leftTrangle</span></span><span class="token punctuation">{</span>
         @include <span class="token function">trangle</span><span class="token punctuation">(</span>left, green<span class="token punctuation">)</span>
@@ -801,7 +806,7 @@
     <span class="token punctuation">}</span>
 
     <span class="token comment" spellcheck="true">/* less */</span>
-    <span class="token atrule"><span class="token rule">@driection</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span>
+    <span class="token atrule"><span class="token rule">@direction</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span></span>
     <span class="token selector">p</span><span class="token punctuation">{</span>
         <span class="token selector">border-@</span><span class="token punctuation">{</span>direction<span class="token punctuation">}</span><span class="token punctuation">:</span> <span class="token number">1</span>px solid <span class="token hexcode">#000</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
@@ -831,7 +836,7 @@
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>文件的划分和布局展开讲篇幅太多，更多的讨论请看<br><a href="https://www.zhihu.com/question/35708352" target="_blank" rel="external">你是如何去组织项目中的 Less/Sass 代码的？</a></p>
 <p>文件划分和组织需要用到本地编译器，我推荐新手使用 koala，一款国人开发的编译器，支持，less/scss等编译<br><a href="http://koala-app.com/index-zh.html" target="_blank" rel="external">koala官网</a><br><a href="http://blog.csdn.net/u011250873/article/details/45917519" target="_blank" rel="external">koala使用教程</a></p>
-<h3 id="mixin与extned之争"><a href="#mixin与extned之争" class="headerlink" title="mixin与extned之争"></a>mixin与extned之争</h3><p>到底是用mixin还是extend呢？ </p>
+<h3 id="mixin与extend之争"><a href="#mixin与extend之争" class="headerlink" title="mixin与extend之争"></a>mixin与extend之争</h3><p>mixin和extend好像都差不多，到底是用mixin还是extend呢？ </p>
 <p><strong>extend</strong></p>
 <p>优点：</p>
 <pre><code>&gt; 1. 能够最大程度地复用代码，减少冗余代码
@@ -914,7 +919,7 @@ gitment.render('container')
         mdui-color-theme
       
       ">
-        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#到底应该选择哪个css预处理器呢"><span class="post-toc-number">1.<span class="post-toc-text">到底应该选择哪个css预处理器呢</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#css预处理器的简介"><span class="post-toc-number">2.<span class="post-toc-text">css预处理器的简介</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是css预处理器"><span class="post-toc-number">2.1.<span class="post-toc-text">什么是css预处理器</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#有哪些css预处理器"><span class="post-toc-number">2.2.<span class="post-toc-text">有哪些css预处理器</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#学前准备"><span class="post-toc-number">3.<span class="post-toc-text">学前准备</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#变量"><span class="post-toc-number">4.<span class="post-toc-text">变量</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是css变量？"><span class="post-toc-number">4.1.<span class="post-toc-text">什么是css变量？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#scss变量和less变量的区别"><span class="post-toc-number">4.2.<span class="post-toc-text">scss变量和less变量的区别</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#css变量有哪些使用场景？"><span class="post-toc-number">4.3.<span class="post-toc-text">css变量有哪些使用场景？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less变量的特性"><span class="post-toc-number">4.4.<span class="post-toc-text">less变量的特性</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套"><span class="post-toc-number">5.<span class="post-toc-text">嵌套</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套的使用场景"><span class="post-toc-number">5.1.<span class="post-toc-text">嵌套的使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套怎么用？"><span class="post-toc-number">5.2.<span class="post-toc-text">嵌套怎么用？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#父选择器"><span class="post-toc-number">5.3.<span class="post-toc-text">父选择器</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#作用域"><span class="post-toc-number">5.4.<span class="post-toc-text">作用域</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less嵌套和scss嵌套用法的区别"><span class="post-toc-number">5.5.<span class="post-toc-text">less嵌套和scss嵌套用法的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#mixin混入"><span class="post-toc-number">6.<span class="post-toc-text">mixin混入</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是混入"><span class="post-toc-number">6.1.<span class="post-toc-text">什么是混入</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less混入和scss混入的区别"><span class="post-toc-number">6.2.<span class="post-toc-text">less混入和scss混入的区别</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#带参数的混入"><span class="post-toc-number">6.3.<span class="post-toc-text">带参数的混入</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#extend继承"><span class="post-toc-number">7.<span class="post-toc-text">extend继承</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#extend使用场景"><span class="post-toc-number">7.1.<span class="post-toc-text">extend使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#placeholder的使用场景"><span class="post-toc-number">7.2.<span class="post-toc-text">%placeholder的使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less-extend-和-scss-extend的区别"><span class="post-toc-number">7.3.<span class="post-toc-text">less extend 和 scss extend的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#插值"><span class="post-toc-number">8.<span class="post-toc-text">插值</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#插值使用场景"><span class="post-toc-number">8.1.<span class="post-toc-text">插值使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less中插值和scss中插值的区别"><span class="post-toc-number">8.2.<span class="post-toc-text">less中插值和scss中插值的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件导入"><span class="post-toc-number">9.<span class="post-toc-text">文件导入</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件导入语法"><span class="post-toc-number">9.1.<span class="post-toc-text">文件导入语法</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#分音-引用"><span class="post-toc-number">9.2.<span class="post-toc-text">分音/引用</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件的划分与组织"><span class="post-toc-number">9.3.<span class="post-toc-text">文件的划分与组织</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#mixin与extned之争"><span class="post-toc-number">10.<span class="post-toc-text">mixin与extned之争</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#结语"><span class="post-toc-number">11.<span class="post-toc-text">结语</span></span></a></a></ul>
+        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#到底应该选择哪个css预处理器呢"><span class="post-toc-number">1.<span class="post-toc-text">到底应该选择哪个css预处理器呢</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#css预处理器的简介"><span class="post-toc-number">2.<span class="post-toc-text">css预处理器的简介</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是css预处理器"><span class="post-toc-number">2.1.<span class="post-toc-text">什么是css预处理器</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#有哪些css预处理器"><span class="post-toc-number">2.2.<span class="post-toc-text">有哪些css预处理器</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#学前准备"><span class="post-toc-number">3.<span class="post-toc-text">学前准备</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#变量"><span class="post-toc-number">4.<span class="post-toc-text">变量</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是css变量？"><span class="post-toc-number">4.1.<span class="post-toc-text">什么是css变量？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#scss变量和less变量的区别"><span class="post-toc-number">4.2.<span class="post-toc-text">scss变量和less变量的区别</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#css变量有哪些使用场景？"><span class="post-toc-number">4.3.<span class="post-toc-text">css变量有哪些使用场景？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less变量的特性"><span class="post-toc-number">4.4.<span class="post-toc-text">less变量的特性</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套"><span class="post-toc-number">5.<span class="post-toc-text">嵌套</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套的使用场景"><span class="post-toc-number">5.1.<span class="post-toc-text">嵌套的使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#嵌套怎么用？"><span class="post-toc-number">5.2.<span class="post-toc-text">嵌套怎么用？</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#父选择器"><span class="post-toc-number">5.3.<span class="post-toc-text">父选择器</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#作用域"><span class="post-toc-number">5.4.<span class="post-toc-text">作用域</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less嵌套和scss嵌套用法的区别"><span class="post-toc-number">5.5.<span class="post-toc-text">less嵌套和scss嵌套用法的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#mixin混入"><span class="post-toc-number">6.<span class="post-toc-text">mixin混入</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#什么是混入"><span class="post-toc-number">6.1.<span class="post-toc-text">什么是混入</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less混入和scss混入的区别"><span class="post-toc-number">6.2.<span class="post-toc-text">less混入和scss混入的区别</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#带参数的混入"><span class="post-toc-number">6.3.<span class="post-toc-text">带参数的混入</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#extend继承"><span class="post-toc-number">7.<span class="post-toc-text">extend继承</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#extend使用场景"><span class="post-toc-number">7.1.<span class="post-toc-text">extend使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#placeholder的使用场景"><span class="post-toc-number">7.2.<span class="post-toc-text">%placeholder的使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less-extend-和-scss-extend的区别"><span class="post-toc-number">7.3.<span class="post-toc-text">less extend 和 scss extend的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#插值"><span class="post-toc-number">8.<span class="post-toc-text">插值</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#插值使用场景"><span class="post-toc-number">8.1.<span class="post-toc-text">插值使用场景</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#less中插值和scss中插值的区别"><span class="post-toc-number">8.2.<span class="post-toc-text">less中插值和scss中插值的区别</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件导入"><span class="post-toc-number">9.<span class="post-toc-text">文件导入</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件导入语法"><span class="post-toc-number">9.1.<span class="post-toc-text">文件导入语法</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#分音-引用"><span class="post-toc-number">9.2.<span class="post-toc-text">分音/引用</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#文件的划分与组织"><span class="post-toc-number">9.3.<span class="post-toc-text">文件的划分与组织</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#mixin与extend之争"><span class="post-toc-number">10.<span class="post-toc-text">mixin与extend之争</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#结语"><span class="post-toc-number">11.<span class="post-toc-text">结语</span></span></a></a></ul>
       </div>
     </div>
   </div>
@@ -1094,7 +1099,7 @@ gitment.render('container')
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1502469467000
+    var postLastModifiedDate = 1502501571000
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {

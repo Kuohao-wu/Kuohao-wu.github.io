@@ -255,7 +255,7 @@ less变量有一个特性需要注意的，就是lazy loading，懒加载,即变
     .verify{
         /*共性*/
         @include btn;
-        **个性**
+        /*个性*/
         background: green;
     }
 ```
@@ -322,7 +322,7 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
 其实混入就相当于一个函数，能够传参，能够调用。
 
 ```css
-    @mixin .btn($bg,$width,$bdrs) {
+    @mixin btn($bg,$width,$bdrs) {
         display: inline-block;
         border-radius: $bdrs;
         background: $bg;
@@ -334,7 +334,7 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
 混入传参还可以设置默认值
 
 ```css
-    @mixin .btn($bg:#f60,$width:80px,$bdrs) {
+    @mixin btn($bg:#f60,$width:80px,$bdrs) {
         display: inline-block;
         border-radius: $bdrs;
         background: $bg;
@@ -347,7 +347,7 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
 
 ```css
     .warn {
-        @include .btn(#f60,80px,2px)
+        @include btn(#f60,80px,2px)
     }
 ```
 
@@ -445,7 +445,11 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
        &:extend(.a);
        font-size: 16px;
     }
-    
+    /*或者可以这样*/
+    .b:extend(.a){
+        font-size: 16px;
+    }    
+
     /* scss extend */ 
     .a {
         color: #fff;
@@ -455,6 +459,8 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
         font-size: 16px;
     }
 ```
+
+两者的区别就是写法的略有不同，less比较麻烦一点。
 
 ### 插值
 
@@ -484,8 +490,8 @@ scss的@mixin定义的混入是不会编译输出到css中的，而less定义的
     }
     
     /* 灵活引用 */
-    . topTrangle{
-        @include trangle(buttom,#f60)
+    .topTrangle{
+        @include trangle(bottom,#f60)
     }
     .leftTrangle{
         @include trangle(left, green)
@@ -504,7 +510,7 @@ scss中插值使用#{}把变量进行包裹，我们的属性才需要插值,我
     }
     
     /* less */
-    @driection: left;
+    @direction: left;
     p{
         border-@{direction}: 1px solid #000;
     }
@@ -526,6 +532,7 @@ scss和less文件导入都是使用 @import,这和原生的文件导入语法是
 这种功能的实现，scss叫分音(Partials)，less叫引用(reference)
 
 在scss中，分音是根据区分文件来实现的，即如果scss文件中存在以 `_` 开头的，如 `_bootstrap.scss`，导入样式编译的时候，只会编译那些被引用的样式，没有被引用的不会编译到我们的css中。
+
 ```css
 /* 把boostrap.scss重命名成_bootstarp.scss, 但是在import的不需要加 _ */
 @import 'bootstrap';
@@ -561,9 +568,9 @@ style
 [koala官网](http://koala-app.com/index-zh.html)
 [koala使用教程](http://blog.csdn.net/u011250873/article/details/45917519)
 
-### mixin与extned之争
+### mixin与extend之争
 
-到底是用mixin还是extend呢？ 
+mixin和extend好像都差不多，到底是用mixin还是extend呢？ 
 
 **extend**
 
