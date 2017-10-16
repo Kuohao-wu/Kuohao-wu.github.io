@@ -17,7 +17,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.6 -->
   <meta charset="UTF-8">
-  <title>promise解惑 - 国豪的小站</title>
+  <title>微信开发入门之初试koa(二) - 国豪的小站</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -45,7 +45,7 @@
   
       <meta name="description" content="专注于折腾各种东西的博客">
   
-  <meta name="keywords" content="blog, hexo, kuohao,promise">
+  <meta name="keywords" content="blog, hexo, kuohao,koa">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="国豪的小站">
@@ -60,13 +60,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="kuohao-wu.github.io">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="promise解惑 - 国豪的小站 | 国豪的小站">
+  <meta property="og:title" content="微信开发入门之初试koa(二) - 国豪的小站 | 国豪的小站">
   <meta property="og:image" content="/img/main.png" />
   
         <meta property="og:description" content="专注于折腾各种东西的博客">
     
 
-    <meta property="og:article:tag" content="promise"> 
+    <meta property="og:article:tag" content="koa"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -421,11 +421,11 @@
     
   ">
     <div class="post-header-container">
-      <div class="post-title mdui-text-truncate">promise解惑</div>
+      <div class="post-title mdui-text-truncate">微信开发入门之初试koa(二)</div>
       <div class="post-actions mdui-valign">
         <div>
           <span>编写时间：</span>
-          <span style="float: right">8月 12, 2017</span>
+          <span style="float: right">10月 16, 2017</span>
           
         </div>
         
@@ -445,7 +445,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=国豪的小站&title=promise解惑&summary=专注于折腾各种东西的博客&pics=kuohao-wu.github.io/img/favicon.ico&url=kuohao-wu.github.io/2017/08/12/javascript/promise解惑/index.html" target="_blank" class="mdui-ripple">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=国豪的小站&title=微信开发入门之初试koa(二)&summary=专注于折腾各种东西的博客&pics=kuohao-wu.github.io/img/favicon.ico&url=kuohao-wu.github.io/2017/10/16/微信开发/微信开发入门之初试koa (二)/index.html" target="_blank" class="mdui-ripple">
               分享到QQ
           </a>
       </li>
@@ -455,7 +455,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=promise解惑&url=kuohao-wu.github.io//2017/08/12/javascript/promise解惑/index.html&via=kuohao" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=微信开发入门之初试koa(二)&url=kuohao-wu.github.io//2017/10/16/微信开发/微信开发入门之初试koa (二)/index.html&via=kuohao" target="_blank" class="mdui-ripple">
               分享到Twitter
           </a>
       </li>
@@ -463,7 +463,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=promise解惑&url=kuohao-wu.github.io//2017/08/12/javascript/promise解惑/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=微信开发入门之初试koa(二)&url=kuohao-wu.github.io//2017/10/16/微信开发/微信开发入门之初试koa (二)/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               分享到微博
           </a>
       </li>
@@ -487,168 +487,132 @@
         
         
           <div class="mdui-card-media">
-            <img src="/img/random/picHD_25.png"/>
+            <img src="/img/random/picHD_3.png"/>
           </div>
         
         <div class="post-content mdui-typo no-margin" id="post-content">
-          <h3 id="promise-的由来"><a href="#promise-的由来" class="headerlink" title="promise 的由来"></a>promise 的由来</h3><p>有时候我们做ajax请求，可能会遇到以下这种情况<br><code>requsetA &gt; requsetB &gt; requestC</code><br>requestB的请求依赖requestA的数据，requestC的请求依赖requestB的数据。在没有异步编程的概念那时，我们往往只能通过回调函数的方法去解决这个问题。</p>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">     <span class="token function">requestA</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token function">requestB</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                  <span class="token function">requestC</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        <span class="token comment" spellcheck="true">//do something</span>
-                  <span class="token punctuation">}</span><span class="token punctuation">)</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+          <h3 id="为啥要选择koa2"><a href="#为啥要选择koa2" class="headerlink" title="为啥要选择koa2"></a>为啥要选择koa2</h3><p>这次我们使用最新的koa2.3框架进行微信后台的开发，koa2使用了async，await来进行处理异步事件，相比koa的generater来得更简洁和语义化一些，而且应该也会是未来的node后台主流框架，所以我们就尝尝鲜，一起快速入门koa2</p>
+<h3 id="快速搭建一个http服务器"><a href="#快速搭建一个http服务器" class="headerlink" title="快速搭建一个http服务器"></a>快速搭建一个http服务器</h3><p>koa2搭建一个简单的web服务器只需要四行代码</p>
+<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">    cosnt Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token keyword">async</span> ctx <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">'hello world'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>首先先开启natapp服务器，再运行这个脚本 <code>node app</code>，在浏览器打开 <code>http://kuohao.natapp1.cc/</code>,就可以看到 <strong>hello world</strong></p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p>在express框架中，路由是集成在框架中的</p>
+<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">    <span class="token comment" spellcheck="true">// express</span>
+    <span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>res<span class="token punctuation">,</span>req<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">8080</span><span class="token punctuation">)</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>其实也不是很难看，比较有层次感，哈哈。。。</p>
-<p><strong>然而</strong>，实际情况并不会想现在那样那么简单，你可能还需要将requestA的数据进行一些处理才能够传给requestB，requestB请求回来的数据，又得做一些处理才能传给requestC，那么这就会变成一团巨大的函数体，可读性十分糟糕。</p>
-<p>所以就有了promise对象的出现，它是专治多重依赖的异步操作的。</p>
-<p>我们可以使用promise来改写以上代码</p>
-<h3 id="promise走起"><a href="#promise走起" class="headerlink" title="promise走起"></a>promise走起</h3><pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//定义 一个promise对象，进行requestA异步请求</span>
-  <span class="token keyword">let</span> pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-       <span class="token function">requestA</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//一些配置})</span>
-       <span class="token comment" spellcheck="true">//jquery 1.8+ 新写法，success已经过时</span>
-      <span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-          <span class="token comment" spellcheck="true">//resolve方法将参数传递给下一个回调函数</span>
-          <span class="token function">resolve</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>  
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<p>但是koa就将路由分离出来，由用户自行添加</p>
+<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">    <span class="token comment" spellcheck="true">// koa</span>
+    <span class="token keyword">const</span> Koa <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa'</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Koa</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> route <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'koa-route'</span><span class="token punctuation">)</span>
 
- <span class="token comment" spellcheck="true">//进行requestB异步请求</span>
-<span class="token keyword">let</span> requestB <span class="token operator">=</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-    <span class="token keyword">let</span> pro1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-      <span class="token function">reqb</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//一些配置})</span>
-      <span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token function">resolve</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 作为一个中间件使用</span>
+    <span class="token keyword">const</span> home <span class="token operator">=</span> route<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> ctx <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        res<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token string">'hello world'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">// 使用中间件</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>home<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="完整的客户端请求和服务端响应示例"><a href="#完整的客户端请求和服务端响应示例" class="headerlink" title="完整的客户端请求和服务端响应示例"></a>完整的客户端请求和服务端响应示例</h3><pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">    <span class="token comment" spellcheck="true">// 成绩数据</span>
+    <span class="token keyword">const</span> data <span class="token operator">=</span> <span class="token punctuation">[</span>
+        <span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token string">'kuohao'</span><span class="token punctuation">,</span>
+            age<span class="token punctuation">:</span> <span class="token number">22</span><span class="token punctuation">,</span>
+            grade<span class="token punctuation">:</span> <span class="token number">80</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token string">'lily'</span><span class="token punctuation">,</span>
+            age<span class="token punctuation">:</span> <span class="token number">20</span><span class="token punctuation">,</span>
+            grade<span class="token punctuation">:</span> <span class="token number">90</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">{</span>
+            name<span class="token punctuation">:</span> <span class="token string">'wang'</span><span class="token punctuation">,</span>
+            age<span class="token punctuation">:</span> <span class="token number">23</span><span class="token punctuation">,</span>
+            grade<span class="token punctuation">:</span> <span class="token number">70</span>
+        <span class="token punctuation">}</span> 
+    <span class="token punctuation">]</span>
 
- <span class="token comment" spellcheck="true">//进行requestC异步请求</span>
-<span class="token keyword">let</span> requestC <span class="token operator">=</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-    <span class="token keyword">let</span> pro2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-      <span class="token function">reqc</span><span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token comment" spellcheck="true">//一些配置})</span>
-      <span class="token punctuation">.</span><span class="token function">done</span><span class="token punctuation">(</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-          <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-      <span class="token punctuation">}</span><span class="token punctuation">)</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token keyword">const</span> homePage <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+        &lt;!DOCTYPE html>
+        &lt;html lang="en">
+        &lt;head>
+          &lt;meta charset="UTF-8">
+          &lt;title>Document&lt;/title>
+        &lt;/head>
+        &lt;body>
+          &lt;h1>学生成绩查询系统&lt;/h1>
+          &lt;form action="/grade">
+            &lt;input name="name" type="text" placeholder="请输入学生姓名"/>
+            &lt;button>查询&lt;/button>
+          &lt;/form>
+        &lt;/body>
+        &lt;/html>
+      `</span></span>
 
-<span class="token comment" spellcheck="true">//然后 ,使用优雅的方式进行异步回调</span>
+    <span class="token comment" spellcheck="true">// home路由,返回主页HTML</span>
+    <span class="token keyword">const</span> home <span class="token operator">=</span> route<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">,</span> ctx <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> homePage
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
 
-pro<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>requestB<span class="token punctuation">)</span>
-   <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>requestC<span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="promise与传统的ajxa同步请求"><a href="#promise与传统的ajxa同步请求" class="headerlink" title="promise与传统的ajxa同步请求"></a>promise与传统的ajxa同步请求</h3><p>让我们先来做一个实验</p>
-<ol>
-<li>写段简单的服务端代码，以php为例</li>
-</ol>
-<pre class="line-numbers language-php" data-lang="php"><code class="language-php">   <span class="token delimiter">&lt;?php</span>
-      <span class="token comment" spellcheck="true">//睡眠5秒，模拟真实网络请求环境</span>
-       <span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">//防止跨域请求</span>
-       <span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Origin:*'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-       <span class="token function">header</span><span class="token punctuation">(</span><span class="token string">'Access-Control-Allow-Methods:POST,GET'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//获取前端get请求参数，返回</span>
-       <span class="token variable">$usript</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string">'keyword'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-       <span class="token keyword">echo</span> <span class="token variable">$usript</span><span class="token punctuation">;</span>
-   <span class="token delimiter">?></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ol>
-<li><p>封装原生ajax请求</p>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//使用 ES6赋值解构语法</span>
-<span class="token keyword">function</span> <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>url<span class="token punctuation">,</span>test<span class="token punctuation">,</span>bool<span class="token punctuation">,</span>callback<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-         <span class="token keyword">var</span> ajax <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">XMLHttpRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         ajax<span class="token punctuation">.</span>onreadystatechange <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-             <span class="token keyword">if</span> <span class="token punctuation">(</span>ajax<span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> ajax<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                 <span class="token keyword">var</span> response <span class="token operator">=</span> ajax<span class="token punctuation">.</span>responseText<span class="token punctuation">;</span>
-                 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>callback<span class="token punctuation">)</span> <span class="token operator">===</span> <span class="token string">'[object Function]'</span> <span class="token operator">&amp;&amp;</span> <span class="token function">callback</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
-                 test <span class="token operator">&amp;&amp;</span> console<span class="token punctuation">.</span><span class="token function">timeEnd</span><span class="token punctuation">(</span>test<span class="token punctuation">)</span>
-             <span class="token punctuation">}</span>
-         <span class="token punctuation">}</span><span class="token punctuation">;</span>
-         ajax<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"GET"</span><span class="token punctuation">,</span> url<span class="token punctuation">,</span> bool<span class="token punctuation">)</span><span class="token punctuation">;</span>
-         ajax<span class="token punctuation">.</span><span class="token function">setRequestHeader</span><span class="token punctuation">(</span><span class="token string">"Content-type"</span><span class="token punctuation">,</span> <span class="token string">"text/plain"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-         ajax<span class="token punctuation">.</span><span class="token function">send</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+    <span class="token comment" spellcheck="true">// checkGrade路由</span>
+    <span class="token keyword">const</span> checkGrade <span class="token operator">=</span> route<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span><span class="token string">'/grade'</span><span class="token punctuation">,</span> ctx <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> name <span class="token operator">=</span> ctx<span class="token punctuation">.</span>query<span class="token punctuation">.</span>name
+      <span class="token keyword">const</span> result <span class="token operator">=</span> data<span class="token punctuation">.</span><span class="token function">find</span><span class="token punctuation">(</span>item <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>name <span class="token operator">===</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+      <span class="token keyword">const</span> respon <span class="token operator">=</span> result <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+          <span class="token keyword">let</span> content <span class="token operator">=</span> <span class="token string">''</span>
+          <span class="token keyword">if</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+              content  <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+                &lt;p></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">的成绩为</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>result<span class="token punctuation">.</span>grade<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&lt;/p>
+                &lt;a href="/">返回&lt;/a>
+              `</span></span>
+          <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+              content <span class="token operator">=</span> <span class="token template-string"><span class="token string">`
+               &lt;p>您查询的学生不存在&lt;/p>
+               &lt;a href="/">返回&lt;/a>
+              `</span></span>
+          <span class="token punctuation">}</span>
+          <span class="token keyword">return</span> content
+      <span class="token punctuation">}</span>
+      <span class="token comment" spellcheck="true">// 返回响应数据</span>
+      ctx<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'html'</span>
+      ctx<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token function">respon</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>home<span class="token punctuation">)</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>checkGrade<span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="疑点解析"><a href="#疑点解析" class="headerlink" title="疑点解析"></a>疑点解析</h3><h4 id="context"><a href="#context" class="headerlink" title="context"></a>context</h4><p>koa2和koa不同之处就是koa2使用async,await代替了generater处理异步事件，Koa Context 将 node 的 request 和 response 对象封装在一个单独的对象里面，其为编写 web 应用和 API 提供了很多有用的方法。</p>
+<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">    <span class="token comment" spellcheck="true">// koa</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span>funciton<span class="token operator">*</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span>    <span class="token comment" spellcheck="true">// is the context</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>response   <span class="token comment" spellcheck="true">// response</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>request    <span class="token comment" spellcheck="true">// request</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+    <span class="token comment" spellcheck="true">// koa2,需要显示传递context</span>
+    app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span> ctx <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+        ctx     <span class="token comment" spellcheck="true">// is the context</span>
+        ctx<span class="token punctuation">.</span>response    <span class="token comment" spellcheck="true">// response</span>
+        ctx<span class="token punctuation">.</span>request     <span class="token comment" spellcheck="true">// request</span>
+    <span class="token punctuation">}</span> <span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="ctx-body-和-ctx-response-body"><a href="#ctx-body-和-ctx-response-body" class="headerlink" title="ctx.body 和 ctx.response.body"></a>ctx.body 和 ctx.response.body</h4><p>许多 context 的访问器和方法为了便于访问和调用，简单的委托给他们的 ctx.request 和 ctx.response 所对应的等价方法， 比如说 ctx.type 和 ctx.length 代理了 response 对象中对应的方法，ctx.path 和 ctx.method 代理了 request 对象中对应的方法。</p>
+<h3 id="深入理解koa需要看的文章"><a href="#深入理解koa需要看的文章" class="headerlink" title="深入理解koa需要看的文章"></a>深入理解koa需要看的文章</h3><ol>
+<li><a href="http://www.ruanyifeng.com/blog/2017/08/koa.html" target="_blank" rel="external">Koa 框架教程</a></li>
+<li><p><a href="https://cnodejs.org/topic/5709959abc564eaf3c6a48c8" target="_blank" rel="external">Koa 2入门</a></p>
 </li>
-<li><p>编写同步测试代码</p>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//使用chrome控制台api 的console.time()进行计时操作</span>
-<span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-         url<span class="token punctuation">:</span><span class="token string">"http://192.168.1.105/index.php?keyword=123"</span><span class="token punctuation">,</span>
-         bool<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
-         callback<span class="token punctuation">:</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-             <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                 url<span class="token punctuation">:</span><span class="token string">"http://192.168.1.105/index.php?keyword=123"</span><span class="token punctuation">,</span>
-                 test<span class="token punctuation">:</span><span class="token string">'sync test'</span><span class="token punctuation">,</span>
-                 bool<span class="token punctuation">:</span><span class="token boolean">false</span><span class="token punctuation">,</span>
-                 callback<span class="token punctuation">:</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> -requestA: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-             <span class="token punctuation">}</span><span class="token punctuation">)</span>
-         <span class="token punctuation">}</span>
-     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello promise'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p><a href="https://cnodejs.org/topic/58fd8ec7523b9d0956dad945" target="_blank" rel="external">koa中间件机制详解</a></p>
 </li>
 </ol>
-<p>结果</p>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript"><span class="token number">123</span>
-test<span class="token punctuation">.</span>html<span class="token punctuation">:</span><span class="token number">15</span> sync test<span class="token punctuation">:</span> <span class="token number">10014</span><span class="token punctuation">.</span>349ms
-hello promise
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><strong>结果显而易见ajax同步请求会阻塞javascript运行，导致其后的代码阻塞等待，严重拖低性能</strong></p>
-<ol>
-<li>编写异步测试代码</li>
-</ol>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript">   console<span class="token punctuation">.</span><span class="token function">time</span><span class="token punctuation">(</span><span class="token string">'async test'</span><span class="token punctuation">)</span>
-        <span class="token keyword">let</span> pro <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-            <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                url<span class="token punctuation">:</span><span class="token string">"http://192.168.1.105/index.php?keyword=123"</span><span class="token punctuation">,</span>
-                bool<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
-                callback<span class="token punctuation">:</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        <span class="token function">resolve</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'请求错误！'</span><span class="token punctuation">)</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">let</span> requestA <span class="token operator">=</span> <span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-            <span class="token keyword">let</span> resA <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-            <span class="token function">ajax</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-                url<span class="token punctuation">:</span><span class="token string">"http://192.168.1.105/index.php?keyword=123"</span><span class="token punctuation">,</span>
-                bool<span class="token punctuation">:</span><span class="token boolean">true</span><span class="token punctuation">,</span>
-                callback<span class="token punctuation">:</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-                    <span class="token keyword">if</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span><span class="token punctuation">{</span>
-                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>res<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string"> -requestA: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>data<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">`</span></span><span class="token punctuation">)</span>
-                    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
-                        <span class="token function">reject</span><span class="token punctuation">(</span><span class="token string">'请求错误！'</span><span class="token punctuation">)</span>
-                    <span class="token punctuation">}</span>
-                <span class="token punctuation">}</span><span class="token punctuation">,</span>
-                test<span class="token punctuation">:</span><span class="token string">'async test'</span>
-            <span class="token punctuation">}</span><span class="token punctuation">)</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token punctuation">}</span>
-    pro<span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>requestA<span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello promise'</span><span class="token punctuation">)</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><strong>结果</strong></p>
-<pre class="line-numbers language-javascsirpt" data-lang="javascsirpt"><code class="language-javascsirpt">hello promise
-test.html:62 123 -requestA: 123
-test.html:15 async test: 10022.117ms
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><strong>promise是异步的，引擎执行代码的时候会先将异步代码挂起，先去执行其他代码，等待上一个请求结束再回过头来执行下一个请求的代码，所以，虽然promise和ajax同步请求用的时间一样多，也可以说promise就是在做同步请求，但是promise本身是异步的，并不会阻塞代码，所以你可以看到先打印出了hello promise</strong></p>
 
         </div>
 
@@ -662,8 +626,8 @@ test.html:15 async test: 10022.117ms
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/categories/javascript/">
-                    <span>javascript</span>
+                  <a href="/categories/微信开发/">
+                    <span>微信开发</span>
                   </a>
                 
               </div>
@@ -674,8 +638,8 @@ test.html:15 async test: 10022.117ms
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/tags/promise/">
-                    <span>promise</span>
+                  <a href="/tags/koa/">
+                    <span>koa</span>
                   </a>
                 
               </div>
@@ -711,7 +675,7 @@ gitment.render('container')
         mdui-color-theme
       
       ">
-        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#promise-的由来"><span class="post-toc-number">1.<span class="post-toc-text">promise 的由来</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#promise走起"><span class="post-toc-number">2.<span class="post-toc-text">promise走起</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#promise与传统的ajxa同步请求"><span class="post-toc-number">3.<span class="post-toc-text">promise与传统的ajxa同步请求</span></span></a></a></ul>
+        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#为啥要选择koa2"><span class="post-toc-number">1.<span class="post-toc-text">为啥要选择koa2</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#快速搭建一个http服务器"><span class="post-toc-number">2.<span class="post-toc-text">快速搭建一个http服务器</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#路由"><span class="post-toc-number">3.<span class="post-toc-text">路由</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#完整的客户端请求和服务端响应示例"><span class="post-toc-number">4.<span class="post-toc-text">完整的客户端请求和服务端响应示例</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#疑点解析"><span class="post-toc-number">5.<span class="post-toc-text">疑点解析</span></span></a><ul class="mdui-list-dense post-toc-child"><a class="mdui-list-item mdui-ripple post-toc-link" href="#context"><span class="post-toc-number">5.1.<span class="post-toc-text">context</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#ctx-body-和-ctx-response-body"><span class="post-toc-number">5.2.<span class="post-toc-text">ctx.body 和 ctx.response.body</span></span></a></a></ul></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#深入理解koa需要看的文章"><span class="post-toc-number">6.<span class="post-toc-text">深入理解koa需要看的文章</span></span></a></a></ul>
       </div>
     </div>
   </div>
@@ -891,7 +855,7 @@ gitment.render('container')
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1502496127000
+    var postLastModifiedDate = 1508124712732
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {

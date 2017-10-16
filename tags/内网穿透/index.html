@@ -17,7 +17,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.6 -->
   <meta charset="UTF-8">
-  <title>首页 - 国豪的小站</title>
+  <title>标签: 内网穿透 - 国豪的小站</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -60,7 +60,7 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="kuohao-wu.github.io">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="首页 - 国豪的小站 | 国豪的小站">
+  <meta property="og:title" content="标签: 内网穿透 - 国豪的小站 | 国豪的小站">
   <meta property="og:image" content="/img/main.png" />
   
         <meta property="og:description" content="专注于折腾各种东西的博客">
@@ -110,7 +110,11 @@
   <body class="mdui-theme-primary-indigo mdui-theme-accent-blue
    
   
-  " >
+    mdui-appbar-with-toolbar
+  
+  
+    side-content style-fix
+  " onresize="styleChanging()">
 
 
   
@@ -121,16 +125,40 @@
 
   
 
-  <div class="mdui-appbar animate-appbar mdui-shadow-0" id="blog-appbar">
-    <div class="mdui-toolbar">
-      <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
-        <i class="mdui-icon">
-          <span></span>
-        </i>
-      </button>
-    </div>
-  </div>
+    <div class="mdui-appbar animate-appbar mdui-shadow-0 mdui-appbar-fixed" id="blog-appbar">
+      <div class="mdui-toolbar mdui-color-theme mdui-shadow-2">
+        <button class="mdui-btn mdui-ripple mdui-btn-icon drawer-button" mdui-drawer="{target: '#drawer'}">
+          <i class="mdui-icon">
+            <span></span>
+          </i>
+        </button>
+        
+          <a href="/" class="mdui-typo-headline">
+            Title
+          </a>
+          <span class="appbar-border-line mdui-hidden-xs"></span>
+        
+        
+          <span class="mdui-typo-title mdui-hidden-xs"
+            
+              onclick="smoothScroll.animateScroll( 0 );"
+            
+          >
+            内网穿透
+          </span>
+        
+        
+        
+          <div class="flex-spacer"></div>
+        
+        
+        
 
+      </div>
+    </div>
+  
+
+  <div id="search-cover" searchResult onclick="closeSearch()"></div>
 
 
 
@@ -139,6 +167,8 @@
 
   
   <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close
+  
+    drawer-fix
   " id="drawer" style="z-index: 2001;">
   <div class="userview" style="background-image: url(/img/bg.png)">
   <div class="overlay">
@@ -162,12 +192,14 @@
   <div class="hexo">
     
       <div class="mdui-list no-padding-bottom">
-        <li class="mdui-list-item mdui-ripple mdui-list-item-active">
-          <i class="mdui-list-item-icon mdui-icon material-icons mdui-text-color-theme-accent">&#xe88a;</i>
-          <div class="mdui-list-item-content mdui-text-color-theme-accent">
-            首页
-          </div>
-        </li>
+        <a href="/">
+          <li class="mdui-list-item mdui-ripple">
+            <i class="mdui-list-item-icon mdui-icon material-icons">&#xe88a;</i>
+            <div class="mdui-list-item-content">
+              首页
+            </div>
+          </li>
+        </a>
       </div>
     
     
@@ -240,7 +272,7 @@
           </div>
         
         
-          <div class="mdui-collapse-item ">
+          <div class="mdui-collapse-item mdui-collapse-item-open">
             <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
               <i class="mdui-list-item-icon mdui-icon fa fa-tags mdui-text-center"></i>
               <div class="mdui-list-item-content">标签</div>
@@ -373,24 +405,89 @@
 
 
 
+  
+
+  <style id="side_content_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("side_content_css","/css/src/now/side_content.min.css?6QUsjVbcFbaNw1GxvnmHrA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+
+<div id="side-content" class="mdui-color-pink animate-drawer">
+  <div class="mdui-grid-tile" style="overflow: visible;">
+    <div class="bg">
+      <img src="/img/random/picHD_37.png" />
+    </div>
+    <div class="mdui-grid-tile-actions mdui-grid-tile-actions-top mdui-grid-tile-actions-gradient">
+      <div class="flex-spacer"></div>
+      <div class="mdui-grid-tile-buttons">
+        
+  <button class="mdui-btn mdui-ripple mdui-btn-icon mdui-float-right" mdui-menu="{target: '#menu-page-share'}"><i class="mdui-icon material-icons">&#xe80d;</i></button>
+
+  <ul class="mdui-menu" id="menu-page-share">
+
+    
+
+    
+
+    
+
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=内网穿透&title=内网穿透&summary=专注于折腾各种东西的博客&pics=kuohao-wu.github.io/img/favicon.ico&url=kuohao-wu.github.io//tags/内网穿透/index.html" target="_blank" class="mdui-ripple">
+              分享到QQ
+          </a>
+      </li>
+    
+
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=内网穿透&url=kuohao-wu.github.io//tags/内网穿透/index.html&via=kuohao" target="_blank" class="mdui-ripple">
+              分享到Twitter
+          </a>
+      </li>
+    
+
+    
+      <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share.php?appkey=&title=内网穿透&url=kuohao-wu.github.io//tags/内网穿透/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+              分享到微博
+          </a>
+      </li>
+    
+
+  </ul>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="content">
+    <img class="mdui-img-circle avatar" src="/img/me.png"/>
+    <div class="author mdui-text-center">
+      kuohao
+    </div>
+    <div class="name">
+      内网穿透
+    </div>
+    <div class="length">
+      
+      1篇文章
+    </div>
+  </div>
+</div>
+<div id="contentLocation"></div>
+
+
 
 <main>
-  
-  <div class="index-warper animate-post">
-  <div id="index">
-    <div class="faviconImg">
-      <img class="mdui-img-fluid" src="/img/main.png" />
-    </div>
-    
-  </div>
-  <div id="search-cover" searchResult></div>
+  <div class="posts-container column-3">
 
+</div>
+<div id="content-list" class="animate-post">
   
-
-  <div id="posts">
-    
-    
-        
+    <div class="content-item">
+      
   
 <div class="mdui-card card-bottom-fix mdui-hoverable">
   <div class="mdui-card-header posts-header">
@@ -399,17 +496,17 @@
       <div class="mdui-typo-body-1-opacity mdui-typo">
         <span>kuohao</span>
         <span> · </span>
-        <span>8月 12, 2017</span>
+        <span>10月 16, 2017</span>
       </div>
     </div>
   <div class="flex-spacer"></div>
-    <a href="/2017/08/12/git/git常用技巧/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
+    <a href="/2017/10/16/微信开发/微信开发之域名接入（一）/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
   </div>
   <div class="mdui-card-content posts-content">
     <div class="posts-excerpt">
-      <a href="/2017/08/12/git/git常用技巧/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
+      <a href="/2017/10/16/微信开发/微信开发之域名接入（一）/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
         
-        git常用技巧
+        微信开发之域名接入(一)
       </a>
       <div class="posts-strip mdui-typo-body-1">
         
@@ -417,7 +514,7 @@
     </div>
     <div class="flex-spacer"></div>
     
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_40.png)"></div>
+      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_37.png)"></div>
     
   </div>
   
@@ -433,8 +530,8 @@
         </div>
         <div class="content mdui-typo">
           
-            <a href="/categories/git/">
-              <span>git</span>
+            <a href="/categories/微信开发/">
+              <span>微信开发</span>
             </a>
           
         </div>
@@ -449,8 +546,8 @@
         </div>
         <div class="content mdui-typo">
           
-            <a href="/tags/git/">
-              <span>git</span>
+            <a href="/tags/内网穿透/">
+              <span>内网穿透</span>
             </a>
           
         </div>
@@ -461,507 +558,16 @@
 
 
 
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 11, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/11/git/git入门教程/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/11/git/git入门教程/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        git入门教程
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        git配置
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_41.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/git/">
-              <span>git</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/git/">
-              <span>git</span>
-            </a>
-          
-        </div>
-      
     </div>
   
 </div>
 
 
 
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 11, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/11/css/css预处理器入门/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/11/css/css预处理器入门/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        css预处理器入门
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_15.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/css/">
-              <span>css</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/css预处理/">
-              <span>css预处理</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
 
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 07, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/07/折腾/烹煮hexo系列之三(引入评论模块)/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/07/折腾/烹煮hexo系列之三(引入评论模块)/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        hexo搭建个人技术博客之三(引入评论模块)
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        材料
-g...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_23.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/折腾/">
-              <span>折腾</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 07, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/07/折腾/烹煮hexo系列之二(自定义代码高亮)/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/07/折腾/烹煮hexo系列之二(自定义代码高亮)/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        hexo搭建个人技术博客之二(自定义代码高亮)
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        材料
-h...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_43.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/折腾/">
-              <span>折腾</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 06, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/06/react/react初体验/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/06/react/react初体验/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        react初体验
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        心血来潮，想体验一下react是怎么样的，所以自己跑去做了一个todolist的应用，发现react并没有像vue那样简洁优雅，要实现的东西往往比v...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_21.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/react/">
-              <span>react</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/react/">
-              <span>react</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-        
-  
-<div class="mdui-card card-bottom-fix mdui-hoverable">
-  <div class="mdui-card-header posts-header">
-    <img class="mdui-card-header-avatar" src="/img/me.png"/>
-    <div class="content mdui-valign">
-      <div class="mdui-typo-body-1-opacity mdui-typo">
-        <span>kuohao</span>
-        <span> · </span>
-        <span>8月 06, 2017</span>
-      </div>
-    </div>
-  <div class="flex-spacer"></div>
-    <a href="/2017/08/06/折腾/烹煮hexo系列之一(基础静态博客搭建)/" target="_self" class="mdui-btn mdui-btn-icon mdui-ripple btn-dense"><i class="mdui-icon material-icons">&#xe89e;</i></a>
-  </div>
-  <div class="mdui-card-content posts-content">
-    <div class="posts-excerpt">
-      <a href="/2017/08/06/折腾/烹煮hexo系列之一(基础静态博客搭建)/" target="_self" class="posts-title mdui-typo-title no-text-decoration">
-        
-        烹煮hexo系列之一(基础静态博客搭建)
-      </a>
-      <div class="posts-strip mdui-typo-body-1">
-        材料
-n...
-      </div>
-    </div>
-    <div class="flex-spacer"></div>
-    
-      <div class="posts-thumbnail" style="background-image: url(/img/random/picHD_24.png)"></div>
-    
-  </div>
-  
-    <div class="mdui-divider" style="margin: 0 16px;"></div>
-    <div class="posts-bottom">
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-          
-            mdui-text-color-black-icon
-          
-           material-icons mdui-text-center">&#xe149;</i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/categories/折腾/">
-              <span>折腾</span>
-            </a>
-          
-        </div>
-      
-      
-        <div class="mdui-chip">
-          <span class="mdui-chip-icon"><i class="mdui-icon
-           
-             mdui-text-color-black-icon
-           
-           fa fa-tags mdui-text-center"></i></span>
-        </div>
-        <div class="content mdui-typo">
-          
-            <a href="/tags/hexo/">
-              <span>hexo</span>
-            </a>
-          
-        </div>
-      
-    </div>
-  
-</div>
-
-
-
-    
-  </div>
-  
-  <ul class="pagination">
-    
-    <li class="mdui-ripple">
-      
-      <a href="/" class="mdui-text-color-theme-text">
-      
-        <i class="mdui-icon material-icons">&#xe5cb;</i>
-      </a>
-    </li>
-    
-
-    
-      
-        <li class="mdui-ripple">
-          <a href="/" class="mdui-text-color-theme-text">
-            1
-          </a>
-        </li>
-      
-    
-
-    
-
-    
-      
-    
-      
-        
-      
-    
-
-    
-      <li class="mdui-color-theme-accent">
-        <a class="mdui-text-color-theme-text">2</a>
-      </li>
-    
-
-    
-      
-    
-      
-    
-
-    
-
-    
-
-    
-      <li>
-        <a class="mdui-text-color-theme-icon-disabled">
-          <i class="mdui-icon material-icons">&#xe5cc;</i>
-        </a>
-      </li>
-    
-   </ul>
-
-
-  <button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
+<button id="toTop" class="mdui-fab mdui-color-theme-accent mdui-ripple mdui-fab-fixed mdui-fab-hide" style="z-index: 9;" onclick="smoothScroll.animateScroll( 0 );">
   <i class="mdui-icon material-icons">&#xe5d8;</i>
 </button>
-
-</div>
-
 
 
 </main>
@@ -1016,6 +622,41 @@ n...
 
 
 
+
+
+  <script type="text/ls-javascript" id="style-changing-script">
+  var content_flag = false;
+  var appbar = document.querySelector('div#blog-appbar')
+  var body = document.querySelector('body')
+
+  window.addEventListener('scroll', function() {
+    var scrollTop = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+    var divTop = document.querySelector('div#contentLocation').offsetTop
+    var contentLocation = divTop - scrollTop - 56;
+
+    if (!content_flag && contentLocation < 0 && window.innerWidth < 860) {
+      appbar.classList.add('style-fix');
+      body.classList.remove('style-fix');
+      content_flag = true;
+    } else if (content_flag && contentLocation >= 0 && window.innerWidth < 860) {
+      appbar.classList.remove('style-fix');
+      body.classList.add('style-fix');
+      content_flag = false;
+    };
+  })
+
+  function styleChanging() {
+    var hide = new mdui.Headroom('div#blog-appbar');
+    var windowWidth = window.innerWidth,
+      toLeftWidth = 860;
+    if (windowWidth < toLeftWidth) {
+      hide.enable();
+    } else {
+      hide.disable();
+    }
+  };
+  styleChanging();
+</script>
 
 
 
