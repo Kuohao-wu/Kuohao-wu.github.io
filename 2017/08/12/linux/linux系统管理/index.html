@@ -17,7 +17,7 @@
         https://github.com/Halyul/hexo-theme-mdui
         Version: 1.4.6 -->
   <meta charset="UTF-8">
-  <title>hexo搭建个人技术博客之三(引入评论模块) - 国豪的小站</title>
+  <title>linux系统管理 - 国豪的小站</title>
 
   <!-- Favicons -->
   <link rel="icon shortcut" type="image/ico" href="/img/favicon.ico">
@@ -45,7 +45,7 @@
   
       <meta name="description" content="专注于折腾各种东西的博客">
   
-  <meta name="keywords" content="blog, hexo, kuohao,hexo">
+  <meta name="keywords" content="blog, hexo, kuohao,系统管理">
 
   <!--iOS -->
   <meta name="apple-mobile-web-app-title" content="国豪的小站">
@@ -60,13 +60,13 @@
   <!-- The Open Graph protocol -->
   <meta property="og:url" content="kuohao-wu.github.io">
   <meta property="og:type" content="blog">
-  <meta property="og:title" content="hexo搭建个人技术博客之三(引入评论模块) - 国豪的小站 | 国豪的小站">
+  <meta property="og:title" content="linux系统管理 - 国豪的小站 | 国豪的小站">
   <meta property="og:image" content="/img/main.png" />
   
         <meta property="og:description" content="专注于折腾各种东西的博客">
     
 
-    <meta property="og:article:tag" content="hexo"> 
+    <meta property="og:article:tag" content="系统管理"> 
 
   <!-- Cache -->
   <meta http-equiv="Cache-Control" content="max-age=7200" />
@@ -403,15 +403,11 @@
     
   ">
     <div class="post-header-container">
-      <div class="post-title mdui-text-truncate">hexo搭建个人技术博客之三(引入评论模块)</div>
+      <div class="post-title mdui-text-truncate">linux系统管理</div>
       <div class="post-actions mdui-valign">
         <div>
           <span>编写时间：</span>
-          <span style="float: right">8月 07, 2017</span>
-          
-          <br>
-            <span>最后修改时间：</span>
-            <span>8月 12, 2017</span>
+          <span style="float: right">8月 12, 2017</span>
           
         </div>
         
@@ -431,7 +427,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=国豪的小站&title=hexo搭建个人技术博客之三(引入评论模块)&summary=专注于折腾各种东西的博客&pics=kuohao-wu.github.io/img/favicon.ico&url=kuohao-wu.github.io/2017/08/07/折腾/烹煮hexo系列之三(引入评论模块)/index.html" target="_blank" class="mdui-ripple">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=国豪的小站&title=linux系统管理&summary=专注于折腾各种东西的博客&pics=kuohao-wu.github.io/img/favicon.ico&url=kuohao-wu.github.io/2017/08/12/linux/linux系统管理/index.html" target="_blank" class="mdui-ripple">
               分享到QQ
           </a>
       </li>
@@ -441,7 +437,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=hexo搭建个人技术博客之三(引入评论模块)&url=kuohao-wu.github.io//2017/08/07/折腾/烹煮hexo系列之三(引入评论模块)/index.html&via=kuohao" target="_blank" class="mdui-ripple">
+          <a href="https://twitter.com/intent/tweet?text=linux系统管理&url=kuohao-wu.github.io//2017/08/12/linux/linux系统管理/index.html&via=kuohao" target="_blank" class="mdui-ripple">
               分享到Twitter
           </a>
       </li>
@@ -449,7 +445,7 @@
 
     
       <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share.php?appkey=&title=hexo搭建个人技术博客之三(引入评论模块)&url=kuohao-wu.github.io//2017/08/07/折腾/烹煮hexo系列之三(引入评论模块)/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
+          <a href="http://service.weibo.com/share.php?appkey=&title=linux系统管理&url=kuohao-wu.github.io//2017/08/12/linux/linux系统管理/index.html&pic=&searchPic=false&style=simple" target="_blank" class="mdui-ripple">
               分享到微博
           </a>
       </li>
@@ -473,61 +469,19 @@
         
         
           <div class="mdui-card-media">
-            <img src="/img/random/picHD_5.png"/>
+            <img src="/img/random/picHD_41.png"/>
           </div>
         
         <div class="post-content mdui-typo no-margin" id="post-content">
-          <h3 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h3><ol>
-<li>github账号</li>
-<li>gitment</li>
-<li>耐心</li>
-</ol>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>我们所搭建的hexo博客是托管的github的静态页面,俗称movergithub pages，所以没有评论这种动态网站的交互功能，但是有第三方的插件可以实现评论能实现评论功能，就是把评论的数据放在他们的数据库，存取都在他们的服务器，我们只管调用api就行了，后来我去了解一下，常用的多说评论，网易云跟帖好像都暂停服务了，官网都进不去了。后来又了解到有人利用github issues来实现了一个github pages评论功能，叫gitment的东西,使用github账号登录然后参与评论，使用github提供的评论编辑器，这多么的方便，而且github评论编辑器十分强大，可以直接解析markdown，马上上手！</p>
-<h3 id="gitment原理"><a href="#gitment原理" class="headerlink" title="gitment原理"></a>gitment原理</h3><p>gitment实际上就是利用github issues来实现一个评论功能的。因为你再github上创建一个仓库，然后人们可以在你的仓库提issues，这就相当于一个评论了。然后github开放了issues第三方调用的api，可以在你的网站通过调用github的api来写入或者获取对应仓库的issues，这不就是一个评论存取的过程吗？</p>
-<h3 id="创建评论组件"><a href="#创建评论组件" class="headerlink" title="创建评论组件"></a>创建评论组件</h3><p>有些主题中会有一个comment.esj文件，这就是评论模块，但是对于我们的github pages来说，没有什么用处。所以我们在主题文件夹中_partial目录下创建一个githubIssues.ejs文件</p>
-<p>然后加入以下代码</p>
-<pre class="line-numbers language-html" data-lang="html"><code class="language-html">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>container<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
-    <span class="token selector"><span class="token class">.gitment-header-issue-link</span>,<span class="token class">.gitment-footer-container</span></span><span class="token punctuation">{</span>
-        <span class="token property">display</span><span class="token punctuation">:</span>none<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>stylesheet<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://imsun.github.io/gitment/style/default.css<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>https://imsun.github.io/gitment/dist/gitment.browser.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span>
-    var gitment = new Gitment({
-      id: '页面 ID', // 可选。默认为 location.href
-      owner: 'Kuohao-wu', // 你的github用户名
-      repo: 'githubPageComment', // 你放评论的仓库，就是说你需要开一个新的仓库来提供issues
-      // 以下是第三方调用githubapi接口认证，下面会说怎么获得
-      oauth: {
-        client_id: '***********',
-        client_secret: '***************************',
-      },
-    })
-    gitment.render('container')
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="新建github-repository"><a href="#新建github-repository" class="headerlink" title="新建github repository"></a>新建github repository</h3><p>新建一个github repository来为博客提供issues</p>
-<h3 id="获取github接口认证"><a href="#获取github接口认证" class="headerlink" title="获取github接口认证"></a>获取github接口认证</h3><p>打开 <a href="https://github.com/settings/profile" target="_blank" rel="external">github个人设置</a></p>
-<p>点击侧栏中的 <strong>OAuth applications</strong>,然后 <code>register a new application</code></p>
-<p>填入以下设置</p>
-<pre class="line-numbers language-shell" data-lang="shell"><code class="language-shell">Application name  ## 随便填
-Homepage URL  ## 你的hexo博客地址
-application description  ## 随便填
-Authorization callback URL  ## 你的hexo博客地址
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-<p> 设置完成之后，github会给你提供client_id和client_secret，填入githubIssues.ejs中即可</p>
-<h3 id="在页面中引入githubIssues"><a href="#在页面中引入githubIssues" class="headerlink" title="在页面中引入githubIssues"></a>在页面中引入githubIssues</h3><p> 在主题文件夹下的layout目录中，找到post.ejs,这个就是文章详情的模板，找一个适合的位置插入即可。</p>
-<p> 插入的格式为:</p>
-<pre class="line-numbers language-javascript" data-lang="javascript"><code class="language-javascript"> <span class="token operator">&lt;</span><span class="token operator">%</span><span class="token operator">-</span> <span class="token function">partial</span><span class="token punctuation">(</span><span class="token string">'_partials/githubIssues'</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token operator">></span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p> partial是hexo提供的一个方法，用于引入ejs模板组件</p>
-<h3 id="本地测试"><a href="#本地测试" class="headerlink" title="本地测试"></a>本地测试</h3><p><code>gs</code> 本地构建并测试</p>
-<p>如果没有出现github issues编辑器，那就说明githubIssues.ejs没有正确引入;</p>
-<p>如果出现了github issues编辑器，但是出现 <code>Error: not fount</code> 就说明你的ID写错的，ID应该出你的github用户名，一般是英文字母或者英文+数组</p>
-<p>如果出现了comment is not initialization，那么说明你已经成功引入了github issues插件，只是评论还有没初始化</p>
-<h3 id="初始化评论"><a href="#初始化评论" class="headerlink" title="初始化评论"></a>初始化评论</h3><p>评论编辑器右上角点击login,此时会被提示需要登录github，你用自己的账号登录，之后便会在博客文章页面上，看到 <strong>initialization</strong> 按钮，点击它，出现 <code>no comment yet</code> ，那么评论功能就可以正常使用了</p>
+          <h4 id="查看所有的系统进程"><a href="#查看所有的系统进程" class="headerlink" title="查看所有的系统进程"></a>查看所有的系统进程</h4><p><code>ps aux</code>    –BSD系统查看进程方法<br><code>ps -le</code>    –标准linux查看进程方法</p>
+<h4 id="查看系统健康状况"><a href="#查看系统健康状况" class="headerlink" title="查看系统健康状况"></a>查看系统健康状况</h4><p><code>top</code></p>
+<p>mac下交互模式为</p>
+<ul>
+<li>o + keyname  [‘cpu’,’mem’,’pid’,…] 按keyname对进程排序</li>
+<li>q 退出top模式</li>
+</ul>
+<h4 id="杀死进程"><a href="#杀死进程" class="headerlink" title="杀死进程"></a>杀死进程</h4><p><code>kill [sign] pid</code>      通过pid杀死一个进程,可选项为杀死信号<br><code>killall [sign] proessName</code> 通过进程名杀死一类进程，可选项为杀死信号</p>
+<h4 id="常用的杀死信号"><a href="#常用的杀死信号" class="headerlink" title="常用的杀死信号"></a>常用的杀死信号</h4><p><img src="http://static.zybuluo.com/kuo-hao/jzc5n8i4lme2jkuwi9ayxf9c/image_1bb59f4bk1aj9pj11ckfdga9bb9.png" alt="image_1bb59f4bk1aj9pj11ckfdga9bb9.png-188.3kB"></p>
 
         </div>
 
@@ -541,8 +495,8 @@ Authorization callback URL  ## 你的hexo博客地址
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/categories/折腾/">
-                    <span>折腾</span>
+                  <a href="/categories/linux/">
+                    <span>linux</span>
                   </a>
                 
               </div>
@@ -553,8 +507,8 @@ Authorization callback URL  ## 你的hexo博客地址
               </div>
               <div class="content mdui-typo">
                 
-                  <a href="/tags/hexo/">
-                    <span>hexo</span>
+                  <a href="/tags/系统管理/">
+                    <span>系统管理</span>
                   </a>
                 
               </div>
@@ -590,7 +544,7 @@ gitment.render('container')
         mdui-color-theme
       
       ">
-        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#材料"><span class="post-toc-number">1.<span class="post-toc-text">材料</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#前言"><span class="post-toc-number">2.<span class="post-toc-text">前言</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#gitment原理"><span class="post-toc-number">3.<span class="post-toc-text">gitment原理</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#创建评论组件"><span class="post-toc-number">4.<span class="post-toc-text">创建评论组件</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#新建github-repository"><span class="post-toc-number">5.<span class="post-toc-text">新建github repository</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#获取github接口认证"><span class="post-toc-number">6.<span class="post-toc-text">获取github接口认证</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#在页面中引入githubIssues"><span class="post-toc-number">7.<span class="post-toc-text">在页面中引入githubIssues</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#本地测试"><span class="post-toc-number">8.<span class="post-toc-text">本地测试</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#初始化评论"><span class="post-toc-number">9.<span class="post-toc-text">初始化评论</span></span></a></a></ul>
+        <ul class="mdui-list post-toc"><a class="mdui-list-item mdui-ripple post-toc-link" href="#查看所有的系统进程"><span class="post-toc-number">1.<span class="post-toc-text">查看所有的系统进程</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#查看系统健康状况"><span class="post-toc-number">2.<span class="post-toc-text">查看系统健康状况</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#杀死进程"><span class="post-toc-number">3.<span class="post-toc-text">杀死进程</span></span></a></a><a class="mdui-list-item mdui-ripple post-toc-link" href="#常用的杀死信号"><span class="post-toc-number">4.<span class="post-toc-text">常用的杀死信号</span></span></a></a></ul>
       </div>
     </div>
   </div>
@@ -770,7 +724,7 @@ gitment.render('container')
   <!-- content warning -->
 <script type="text/ls-javascript" id="content-warning-script">
   (function() {
-    var postLastModifiedDate = 1502469399000
+    var postLastModifiedDate = 1502505400000
     var today = (new Date()).getTime()
     var difference = Math.floor((today - postLastModifiedDate)/(24*60*60*1000))
     if (difference >= 100) {
