@@ -49,7 +49,7 @@
       
       <!-- Card components -->
       <div v-if="response && !isLoad" class="card-wrapper">
-         <strong>{{ $t('home.searchResult') }} '{{ keyWordText }}'</strong>
+         <strong v-if="keyWordText">{{ $t('home.searchResult') }} '{{ keyWordText }}'</strong>
          <template v-for="item in response" :key="item.imdbID">
             <Card :title="item.Title" :poster="item.Poster" :id-movie="item.imdbID" :year="item.Year" :type="item.Type" ></Card>
          </template>
