@@ -6,6 +6,8 @@ export function useInstall() {
 
   const installButtonShow = ref(false)
 
+  let appInstalledHandler: () => void
+
   let deferredPrompt: BeforeInstallPromptEvent | null
   const DOMContentLoadedHandler = (evt: Event) => {
     if ('BeforeInstallPromptEvent' in window) {
@@ -24,7 +26,16 @@ export function useInstall() {
     }
   }
 
-  const appInstalledHandler = () => {
+  const removeEventListener = () => {
+    window.removeEventListener('DOMContentLoaded', DOMContentLoadedHandler)
+    window.removeEventListener('beforeinstallprompt', beforeInstallPromptHandler)
+
+    if (typeof appInstalledHandler === 'function') {
+      window.removeEventListener('appinstalled', appInstalledHandler)
+    }
+  }
+
+  appInstalledHandler = () => {
     // 隐藏按钮
     if (installButtonRef.value) {
       installButtonShow.value = false
@@ -32,6 +43,9 @@ export function useInstall() {
     // 重置 deferredPrompt 以便下一次使用。
     deferredPrompt = null;
     console.log('🆗 App Installed');
+
+    // 安装后，可以移除 事件监听器
+    removeEventListener()
   }
 
   const addEventListener = () => {
@@ -41,11 +55,7 @@ export function useInstall() {
     window.addEventListener('appinstalled', appInstalledHandler)
   }
 
-  const removeEventListener = () => {
-    window.removeEventListener('DOMContentLoaded', DOMContentLoadedHandler)
-    window.removeEventListener('beforeinstallprompt', beforeInstallPromptHandler)
-    window.removeEventListener('appinstalled', appInstalledHandler)
-  }
+
 
   onMounted(() => {
     addEventListener()
