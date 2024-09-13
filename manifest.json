@@ -3,6 +3,8 @@
 	"short_name": "OMDB App",
 	"start_url": "/",
 	"display": "standalone",
+  "description": "A fast and easy way to find your favorite movies! supports Chinese and English. super pwa app, with offline support",
+  "categories": ["movies", "recreation"],
 	"background": "#181823",
 	"theme_color": "#181823",
 	"icons": [
@@ -39,6 +41,23 @@
     {
       "src": "/icons/icon-512x512.png",
       "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/screenshot-1.png",
+      "sizes": "586x1304",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot-2.png",
+      "sizes": "586x1304",
+      "type": "image/png"
+    },
+    {
+      "src": "/screenshots/screenshot-3.png",
+      "sizes": "586x1304",
       "type": "image/png"
     }
   ]
