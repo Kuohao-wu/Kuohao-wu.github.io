@@ -175,6 +175,14 @@
          margin-bottom: .75rem;
       }
    }
+   .install-btn {
+      position: fixed;
+      transform: translate(-50%, -50%);
+      bottom: 10%;
+      left: 50%;
+      width: 20%;
+      min-width: 300px;
+   }
 }
 
 /* Medium screens - TABLET DESKTOP LARGE SCREEN */

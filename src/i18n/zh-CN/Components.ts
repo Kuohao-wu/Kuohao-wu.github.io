@@ -9,4 +9,5 @@ export default {
   'components.nav.back': '返回',
   'components.nav.defaultName': '导航',
   'components.waiting.tips': '请稍候，加载数据中',
+  'components.install.defaultText': '安装',
 }

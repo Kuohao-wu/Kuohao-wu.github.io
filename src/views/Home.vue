@@ -54,6 +54,8 @@
             <Card :title="item.Title" :poster="item.Poster" :id-movie="item.imdbID" :year="item.Year" :type="item.Type" ></Card>
          </template>
       </div>
+
+      <Install class="install-btn"></Install>
    </section>
 </template>
 
@@ -64,6 +66,7 @@
    import SetLang from '@/components/SetLang.vue'
    import { IBookMarkCache, IMovie } from '@/types/bookmark';
    import { onMounted, ref, watch } from "vue";
+   import Install from "@/components/Install.vue";
 
    defineOptions({
       name: 'Home'
@@ -146,8 +149,6 @@
       badgeActive.value = name
       getData()
    }
-
-
 
 </script>
 

@@ -9,4 +9,5 @@ export default {
   'components.nav.back': 'Back',
   'components.nav.defaultName': 'Nav',
   'components.waiting.tips': 'Please wait, fetching data from server',
+  'components.install.defaultText': 'Install',
 }
