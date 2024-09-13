@@ -41,3 +41,8 @@
       position: relative;
    }
 }
+
+::-webkit-scrollbar {
+   display: none; /* 针对Webkit内核浏览器 */
+   width: 0 !important;
+ }
