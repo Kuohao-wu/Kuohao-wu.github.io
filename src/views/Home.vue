@@ -69,6 +69,11 @@
    import Install from "@/components/Install.vue";
    import TakeBoardImg from '@/assets/take-board-64.png'
    import BookMarkImg from '@/assets/bookmark-64.png'
+   import { useNotification } from "@/hooks/notification";
+   import { useRouter } from "vue-router";
+
+   const router = useRouter()
+   
 
    defineOptions({
       name: 'Home'
@@ -151,6 +156,10 @@
       badgeActive.value = name
       getData()
    }
+
+   const { showNotification } = useNotification({ router })
+
+   showNotification('最新最热的电影，点我查看')
 
 </script>
 
