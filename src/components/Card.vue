@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <img :src="poster" alt="poster" />
+    <img class="card-img" :src="poster" alt="poster" @error="handleImageError" />
     <div class="card-footer">
       <router-link :to="'/details/' + idMovie">
         <h3>{{ title }}</h3>
@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+import ErrorImg from '@/assets/error.svg'
 
 defineOptions({ name: 'Card' })
 
@@ -34,8 +35,19 @@ withDefaults(
   }
 );
 
+const handleImageError = (evt: any ) => {
+  if (evt && evt.target) {
+   // 防止无限循环触发错误
+   evt.target.onerror = null;
+   evt.target.src = ErrorImg
+  }
+}
+
 </script>
 
 <style lang="scss">
 @import './src/scss/_card';
+.card-img {
+  color: #fff;
+}
 </style>
