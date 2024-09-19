@@ -58,17 +58,17 @@ export default defineConfig({
         ],
         "shortcuts": [
           {
-            "name": "Open Home",
+            "name": "首页",
             "short_name": "Home",
             "description": "search the movies in the home list",
             "url": "/?source=homescreen",
             "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
           },
           {
-            "name": "Open Bookmarks",
+            "name": "书签",
             "short_name": "BookMarks",
             "description": "View the list of movie you saved for later",
-            "url": "/subscbookmarkriptions?source=homescreen",
+            "url": "/bookmark?source=homescreen",
             "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
           }
         ]
