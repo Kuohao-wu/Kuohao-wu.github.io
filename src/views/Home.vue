@@ -16,6 +16,7 @@
             <br>
             {{ $t('home.intro2') }}
          </h3>
+         <button class="subscribe-btn">{{ $t('home.subscribe') }}</button>
       </div>
       <!-- Search bar -->
       <div class="search-wrapper">
@@ -71,8 +72,11 @@
    import BookMarkImg from '@/assets/bookmark-64.png'
    import { useNotification } from "@/hooks/notification";
    import { useRouter } from "vue-router";
+   import { useWebPush } from "@/hooks/web-push";
 
    const router = useRouter()
+
+   useWebPush()
    
 
    defineOptions({
@@ -159,7 +163,7 @@
 
    const { showNotification } = useNotification({ router })
 
-   showNotification('查看你的收藏列表~')
+   // showNotification('查看你的收藏列表~')
 
 </script>
 
