@@ -10,4 +10,8 @@ export default {
   'components.nav.defaultName': '导航',
   'components.waiting.tips': '请稍候，加载数据中',
   'components.install.defaultText': '安装',
+  'components.pwaBadge.offlineText': '应用准备在离线模式下运行',
+  'components.pwaBadge.refreshText': '应用已更新，点击刷新',
+  'components.pwaBadge.closeBtnText': '关闭',
+  'components.pwaBadge.refreshBtnText': '重新加载',
 }

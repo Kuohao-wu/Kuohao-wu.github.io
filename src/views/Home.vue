@@ -5,7 +5,7 @@
         <div class="brand-right">
          <set-lang></set-lang>
          <router-link to="/bookmark" class="bookmark">
-            <img src="https://dl.dropbox.com/s/s9fb1d9vughng58/bookmark-64.png?dl=2"/>
+            <img :src="BookMarkImg"/>
             <span>{{ bookmarkCount }}</span>
          </router-link>
         </div>
@@ -38,7 +38,7 @@
                @click="badgeClick(item.name)" 
                :class="badgeActive === item.name ? 'active' : ''"
                class="badge"> 
-                  <img src="https://dl.dropbox.com/s/g35eijyruta8sv9/take-board-64.png?dl=2" alt="" />
+                  <img :src="TakeBoardImg" alt="" />
                   <p>{{ $t(`common.${item.name.toLowerCase()}`) }}</p>
                </div>
             </template>
@@ -67,6 +67,8 @@
    import { IBookMarkCache, IMovie } from '@/types/bookmark';
    import { onMounted, ref, watch } from "vue";
    import Install from "@/components/Install.vue";
+   import TakeBoardImg from '@/assets/take-board-64.png'
+   import BookMarkImg from '@/assets/bookmark-64.png'
 
    defineOptions({
       name: 'Home'

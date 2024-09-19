@@ -1,11 +1,40 @@
+
+<template>
+  <div
+      v-if="offlineReady || needRefresh"
+      class="pwa-toast"
+      aria-labelledby="toast-message"
+      role="alert"
+  >
+    <div class="message">
+      <span id="toast-message">
+        {{ title }}
+      </span>
+    </div>
+    <div class="buttons">
+      <button v-if="needRefresh" type="button" class="reload" @click="updateServiceWorker()">
+        {{ $t('components.pwaBadge.refreshBtnText') }}
+      </button>
+      <button type="button" @click="close">
+        {{ $t('components.pwaBadge.closeBtnText') }}
+      </button>
+    </div>
+  </div>
+</template>
+
+
+
 <script setup lang="ts">
 import { computed, ref } from 'vue'
 import { useRegisterSW } from 'virtual:pwa-register/vue'
+import { useI18n } from "vue-i18n";
 
 // check for updates every hour
 const period = 60 * 60 * 1000
 
 const swActivated = ref(false)
+
+const { t } = useI18n()
 
 /**
  * This function will register a periodic sync check every hour, you can modify the interval as needed.
@@ -51,9 +80,9 @@ const { offlineReady, needRefresh, updateServiceWorker } = useRegisterSW({
 
 const title = computed(() => {
   if (offlineReady.value)
-    return 'App ready to work offline'
+    return t('components.pwaBadge.offlineText')
   if (needRefresh.value)
-    return 'New content available, click on reload button to update.'
+    return t('components.pwaBadge.refreshText')
   return ''
 })
 
@@ -62,29 +91,6 @@ function close() {
   needRefresh.value = false
 }
 </script>
-
-<template>
-  <div
-      v-if="offlineReady || needRefresh"
-      class="pwa-toast"
-      aria-labelledby="toast-message"
-      role="alert"
-  >
-    <div class="message">
-      <span id="toast-message">
-        {{ title }}
-      </span>
-    </div>
-    <div class="buttons">
-      <button v-if="needRefresh" type="button" class="reload" @click="updateServiceWorker()">
-        Reload
-      </button>
-      <button type="button" @click="close">
-        Close
-      </button>
-    </div>
-  </div>
-</template>
 
 <style scoped>
 .pwa-toast {
@@ -99,9 +105,13 @@ function close() {
   text-align: left;
   box-shadow: 3px 4px 5px 0 #8885;
   display: grid;
+  background-color: #fff;
 }
 .pwa-toast .message {
   margin-bottom: 8px;
+}
+#toast-message {
+  font-size: 0.75rem;
 }
 .pwa-toast .buttons {
   display: flex;
@@ -112,6 +122,7 @@ function close() {
   margin-right: 5px;
   border-radius: 2px;
   padding: 3px 10px;
+  font-size: 0.6rem;
 }
 .pwa-toast button.reload {
   display: block;

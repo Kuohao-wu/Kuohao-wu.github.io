@@ -10,4 +10,8 @@ export default {
   'components.nav.defaultName': 'Nav',
   'components.waiting.tips': 'Please wait, fetching data from server',
   'components.install.defaultText': 'Install',
+  'components.pwaBadge.offlineText': 'App ready to work offline',
+  'components.pwaBadge.refreshText': 'New content available, click on reload button to update.',
+  'components.pwaBadge.closeBtnText': 'Close',
+  'components.pwaBadge.refreshBtnText': 'Reload',
 }
