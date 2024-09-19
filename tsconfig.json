@@ -4,21 +4,26 @@
     "paths": {
       "@/*": ["src/*"]
     },
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ESNext",
+    "module": "ESNext",
     "strict": true,
-    "jsx": "preserve",
     "jsxImportSource": "vue",
-    "moduleResolution": "node",
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "lib": ["ESNext", "dom"],
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+     /* Bundler mode */
+     "moduleResolution": "bundler",
+     "allowImportingTsExtensions": true,
+     "resolveJsonModule": true,
+     "isolatedModules": true,
+     "noEmit": true,
+     "jsx": "preserve",
   },
   "include": [
     "./env.d.ts",
-    "src/**/*",
+    "src/**/*.ts", "src/**/*.tsx", "src/**/*.vue",
     "src/types/global.d.ts"  
   ],
   "exclude": [

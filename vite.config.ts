@@ -26,11 +26,53 @@ export default defineConfig({
       injectRegister: false,
 
       pwaAssets: {
-        disabled: true,
-        config: false,
+        disabled: false,
+        config: true,
       },
 
-      manifest: false,
+      manifest: {
+        "name": "Open Movie DB - Find your favorite movies",
+        "short_name": "OMDB App",
+        "start_url": "/",
+        "display": "standalone",
+        "description": "A fast and easy way to find your favorite movies! supports Chinese and English. super pwa app, with offline support",
+        "categories": ["movies", "recreation"],
+        "background_color": "#181823",
+        "theme_color": "#181823",
+        "screenshots": [
+          {
+            "src": "/screenshots/screenshot-1.png",
+            "sizes": "586x1304",
+            "type": "image/png"
+          },
+          {
+            "src": "/screenshots/screenshot-2.png",
+            "sizes": "586x1304",
+            "type": "image/png"
+          },
+          {
+            "src": "/screenshots/screenshot-3.png",
+            "sizes": "586x1304",
+            "type": "image/png"
+          }
+        ],
+        "shortcuts": [
+          {
+            "name": "Open Home",
+            "short_name": "Home",
+            "description": "search the movies in the home list",
+            "url": "/?source=homescreen",
+            "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+          },
+          {
+            "name": "Open Bookmarks",
+            "short_name": "BookMarks",
+            "description": "View the list of movie you saved for later",
+            "url": "/subscbookmarkriptions?source=homescreen",
+            "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+          }
+        ]
+      },
 
       injectManifest: {
         globPatterns: ['**/*.{js,css,html,svg,png,ico}'],

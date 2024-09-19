@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "serve": "vite preview",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
     "release": "npm run build && git add . && git commit -m 'build' && git push origin HEAD"
   },
   "dependencies": {
@@ -28,5 +28,9 @@
     "workbox-routing": "^7.1.0",
     "workbox-strategies": "^7.1.0",
     "workbox-window": "^7.1.0"
+  },
+  "resolutions": {
+    "sharp": "0.32.6",
+    "sharp-ico": "0.1.5"
   }
 }
