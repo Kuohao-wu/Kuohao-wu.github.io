@@ -1,9 +1,10 @@
 {
   "name": "omdb-app",
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && build",
+    "build": "vite build",
     "serve": "vite preview",
     "release": "npm run build && git add . && git commit -m 'build' && git push origin HEAD"
   },
