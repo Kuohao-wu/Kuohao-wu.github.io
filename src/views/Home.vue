@@ -159,7 +159,7 @@
 
    const { showNotification } = useNotification({ router })
 
-   // showNotification('查看你的收藏列表~')
+   showNotification('查看你的收藏列表~')
 
 </script>
 
