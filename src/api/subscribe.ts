@@ -1,7 +1,7 @@
 import axios, { AxiosResponse } from 'axios'
 
 const http = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: 'http://tgc.natapp1.cc',
   timeout: 5000
 })
 
