@@ -16,7 +16,10 @@
             <br>
             {{ $t('home.intro2') }}
          </h3>
-         <button class="subscribe-btn">{{ $t('home.subscribe') }}</button>
+         <button class="subscribe-btn" :disabled="showSubscribe" @click="subscribe">
+            <span class="loading" v-if="subscribeLoading"></span>
+            <span v-else>{{ $t('home.subscribe') }}</span>
+         </button>
       </div>
       <!-- Search bar -->
       <div class="search-wrapper">
@@ -76,7 +79,7 @@
 
    const router = useRouter()
 
-   useWebPush()
+   const { subscribeLoading, subscribe, showSubscribe } = useWebPush()
    
 
    defineOptions({

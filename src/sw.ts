@@ -22,5 +22,25 @@ registerRoute(new NavigationRoute(
   { allowlist },
 ))
 
+self.addEventListener('push', (evt) => {
+  if (evt.data) {
+    let data = evt.data.text();
+    const options = {
+      body: data,
+      icon: ''
+    }
+    console.log(evt);
+    
+    self.registration.showNotification(
+      '您有未读消息', 
+      options
+    );
+  }
+})
+
+self.addEventListener('notificationclick', (evt) => {
+  console.log(evt);
+})
+
 self.skipWaiting()
 clientsClaim()
