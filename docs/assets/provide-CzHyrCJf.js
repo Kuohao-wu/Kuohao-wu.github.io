@@ -1,0 +1,1 @@
+import{a4 as p,W as r}from"./__uno-DP3CmYwt.js";const o=Symbol("POPUP_BIND_POPUP_ITEM_KEY");function s(){const{bindParent:n,parentProvider:P,index:e}=p(o);return{index:e,popup:P,bindPopup:n}}function u(){const{bindChildren:n,childProviders:P,length:e}=r(o);return{length:e,popupItems:P,bindPopupItems:n}}export{u as a,s as u};

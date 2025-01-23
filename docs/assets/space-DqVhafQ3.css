@@ -1,0 +1,1 @@
+:root{--space-size-mini-y: 1.066667vmin;--space-size-mini-x: 1.066667vmin;--space-size-small-y: 1.6vmin;--space-size-small-x: 1.6vmin;--space-size-normal-y: 2.133333vmin;--space-size-normal-x: 3.2vmin;--space-size-large-y: 3.2vmin;--space-size-large-x: 5.333333vmin}.var-space{display:flex}.var-space--inline{display:inline-flex}.var-space--auto{width:auto}

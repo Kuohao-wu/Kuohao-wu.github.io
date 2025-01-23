@@ -1,0 +1,1 @@
+import{aq as s}from"./__uno-DP3CmYwt.js";const n=async()=>s.get("/h5/v1/userinfo"),r=async e=>s.post("/h5/v1/userinfo",e),o=()=>s.get("/h5/v1/feedback/type"),i=e=>s.post("/h5/v1/feedback",{...e,imageList:e.imageList.map(t=>t.url)}),c=e=>s.get("/h5/v1/user/log/coin_consume",e);export{o as a,i as b,c,n as d,r as e};

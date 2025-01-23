@@ -1,0 +1,1 @@
+.toast .toast-mask{position:fixed;top:0;left:0;right:0;bottom:0;background:#0006;z-index:9999}.toast .toast-content{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10000;padding:3.2vmin;background:#0009;color:#fff;text-align:center;border-radius:2.133333vmin}.fade-out{opacity:0;transition:all .25s ease-in-out}

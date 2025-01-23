@@ -1,0 +1,1 @@
+import{s as e}from"./elevation-CwDwhXA8.js";import{r as d,m as s}from"./__uno-DP3CmYwt.js";function o(n,r){const t=d(e.zIndex);return s(n,a=>{a&&(e.zIndex+=r,t.value=e.zIndex)},{immediate:!0}),{zIndex:t}}export{o as u};
